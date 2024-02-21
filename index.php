@@ -30,11 +30,12 @@
 </header>
 <main class="container p-5">
     <h2 class="text-center mb-5">Genera una password sicura</h2>
-    <form action="" methods="GET">
+    <form action="" methods="GET" class="d-flex justify-content-between align-items-center">
         <div class="my-3 d-flex gap-3 justify-content-start align-items-center">
             <label for="password" class="form-label">Lunghezza Password:</label>
             <input type="number" class="form-control" id="password" value="1">
         </div>
+        <button class="btn btn-primary">Crea</button>
     </form>
     <p>La tua password è:</p>
 </main>
