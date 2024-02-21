@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.form-control {
+    width: 100px;
+}
+
+.form-label {
+    font-size: 20px;
+}
+
+main {
+    background-color: rgb(71, 71, 71);
+    border-radius: 20px;
+}
+
+p {
+    font-size: 20px;
+}

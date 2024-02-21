@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,23 @@
 
 </head>
 <body>
+<header>
+    <div class="container d-flex justify-content-center my-5">
+        <h1>Strong Password Generator</h1>
+    </div>
+</header>
+<main class="container p-5">
+    <h2 class="text-center mb-5">Genera una password sicura</h2>
+    <form action="" methods="GET">
+        <div class="my-3 d-flex gap-3 justify-content-start align-items-center">
+            <label for="password" class="form-label">Lunghezza Password:</label>
+            <input type="number" class="form-control" id="password" value="1">
+        </div>
+    </form>
+    <p>La tua password è:</p>
+</main>
+
+
     <!-- js bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
