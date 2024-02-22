@@ -18,6 +18,7 @@ if(!empty($length)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="img/key-favicon.jpg">
     <title>Generator password</title>
 
     <!-- font-awesome -->
