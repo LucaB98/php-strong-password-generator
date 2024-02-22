@@ -1,6 +1,9 @@
 <?php
 $length = $_GET['lenght'] ?? NULL;
 
+if(!empty($length)){
+    $password = generate_password($length);
+}
 
 function generate_password($length){
     // preparo una password
@@ -59,6 +62,11 @@ function generate_password($length){
     </div>
 </header>
 <main class="container p-5">
+    <?php if(isset($password)):?>
+        <div class="alert alert-info">
+            La password generata è: <strong><?= $password ?></strong>
+        </div>
+    <?php endif; ?>
     <h2 class="text-center mb-5">Genera una password sicura</h2>
     <form action="" methods="GET" class="d-flex justify-content-between align-items-center">
         <div class="my-3 d-flex gap-3 justify-content-start align-items-center">
@@ -67,7 +75,6 @@ function generate_password($length){
         </div>
         <button class="btn btn-primary">Crea</button>
     </form>
-    <p>La tua password è: <span class="text-warning"><?= generate_password($length) ?></span></p>
 </main>
 
 
