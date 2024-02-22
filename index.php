@@ -1,38 +1,16 @@
 <?php
+
+require __DIR__ . '/includes/functions.php';
+
 $length = $_GET['lenght'] ?? NULL;
 
 if(!empty($length)){
-    $password = generate_password($length);
+    generate_password($length);
+
+    header('Location: success.php');
 }
 
-function generate_password($length){
-    // preparo una password
-    $password = '';
 
-    // elenco i possibili caratteri
-
-    $letters = 'abcdefghijklmnopqrstuvwxyz';
-    $numbers = '0123456789';
-    $symbols = '!?*%$#@&(){}[]';
-
-    $characters = $letters . strtoupper($letters) . $numbers . $symbols;
-
-    // calcolo il totale dei caratteri
-    $total_characters = mb_strlen($characters);
-
-    //Estrai lettere a caso
-    while(mb_strlen($password) < $length){
-        //prendo un indice random
-        $random_index = rand(0, $total_characters - 1);
-        // prendo un carattere a caso
-        $random_characters = $characters[$random_index];
-
-        $password .= $random_characters;
-    }
-
-    // restituisco la password generata 
-    return $password;
-}
 ?>
 
 <!DOCTYPE html>
@@ -62,16 +40,11 @@ function generate_password($length){
     </div>
 </header>
 <main class="container p-5">
-    <?php if(isset($password)):?>
-        <div class="alert alert-info">
-            La password generata è: <strong><?= $password ?></strong>
-        </div>
-    <?php endif; ?>
     <h2 class="text-center mb-5">Genera una password sicura</h2>
     <form action="" methods="GET" class="d-flex justify-content-between align-items-center">
         <div class="my-3 d-flex gap-3 justify-content-start align-items-center">
             <label for="password" class="form-label">Lunghezza Password:</label>
-            <input type="number" class="form-control" id="password" name="lenght" min="5" value="<?= $length ?? 1?>">
+            <input type="number" class="form-control" id="password" name="lenght" min="5" value="<?= $length ?? 5?>">
         </div>
         <button class="btn btn-primary">Crea</button>
     </form>
